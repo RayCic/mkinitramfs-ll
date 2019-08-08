@@ -152,7 +152,7 @@ donod() {
 	[ -c console ] || mknod -m 600 console c 5 1 || die
 	[ -c urandom ] || mknod -m 666 urandom c 1 9 || die
 	[ -c random  ] || mknod -m 666 random  c 1 8 || die
-	[ -c mem     ] || mknod -m 640 mem     c 1 1 && chmod 0:9 mem || die
+	[ -c mem     ] || mknod -m 640 mem     c 1 1 || die
 	[ -c null    ] || mknod -m 666 null    c 1 3 || die
 	[ -c tty     ] || mknod -m 666 tty     c 5 0 || die
 	[ -c zero    ] || mknod -m 666 zero    c 1 5 || die
